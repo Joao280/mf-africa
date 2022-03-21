@@ -8,7 +8,7 @@ RUN yarn install
 
 COPY . .
 
-RUN yarn build:single-spa:mf-africa
+RUN yarn build
 
 FROM nginx:latest
 

@@ -46,13 +46,13 @@ ingress:
   enabled: enable
   className: "nginx"
   annotations:
-    {}
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
     - host: rare-animals
       paths:
-        - path: /mf-africa
+        - path: /mf-africa(/|$)(.*)
           pathType: Prefix
           backend:
             service:
